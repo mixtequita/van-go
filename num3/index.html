@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>la cultura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .slide {
+            display: none;
+            padding: 50px;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        img {
+            width: 60%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide active">
+        <h1>¿cuales fueron las pinturas mas famosas de Van Gogh?</h1>
+        <p>
+1. La noche estrellada (1889)<br>
+2. Noche estrellada sobre el Ródano (1888)<br>
+3. Girasoles (1888)<br>
+4. Autorretrato (1889)<br>
+5. Los comedores de patatas (1885)<br>
+6. Campo de trigo con cuervos (1890)<br>
+7. Flores de almendro (1888-1890)<br>
+8. Iris (1889)</p>
+    </div>
+    <div class="slide">
+        <h1>¿porque Van Gogh pinto "la noche estrellada"?</h1>
+        <p>Vincent Van Gogh luchó contra sus problemas de salud mental,<br>
+ y de hecho su muerte fue prematura, a los 37 años. Van Gogh fue ingresado<br>
+ en un centro psiquiátrico, tras sus graves ataques de locura. Fue allí <br>
+donde pintó su famoso y bonito cuadro 'La Noche Estrellada'.</p>
+        <img src="cul.jpeg" alt="historia" height="200" width="500">
+    </div>
+    <div class="slide">
+        <h1>¿como solia vestirse Van Goch?</h1>
+        <p>Cuando iba a trabajar vestía frecuentemente un impermeable y un<br>
+ sombrero también impermeable (parecido a los de los marineros) con un ala <br>
+por detrás que le cubría el cuello. Siempre llevaba una pequeña silla plegable.<br>
+ Cuando caminaba, miraba al frente sin percibirse de las personas que pasaban a su lado</p>
+        <img src="cul2.JPEG" alt="tradicion"  height="200" width="500">
+    </div>
+    <button onclick="cambiarSlide(-1)">Anterior</button>
+    <button onclick="cambiarSlide(1)">Siguiente</button>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function cambiarSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
+</body>
+</html>
